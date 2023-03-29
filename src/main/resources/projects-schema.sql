@@ -22,8 +22,8 @@ CREATE TABLE category (
 CREATE TABLE project_category (
 	project_id INT NOT NULL,
 	category_id INT NOT null,
-	foreign key (project_id) references project (project_id),
-	foreign key (category_id) references category (category_id),
+	foreign key (project_id) references project (project_id) ON DELETE CASCADE,
+	foreign key (category_id) references category (category_id) ON DELETE CASCADE,
 	unique key (project_id, category_id)
 );
 
